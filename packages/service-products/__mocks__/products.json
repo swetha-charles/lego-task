@@ -1,0 +1,21 @@
+{
+  "count": 5,
+  "results": [
+    {
+      "id": "abc",
+      "code": "713",
+      "name": "LEGO City Police Station",
+      "image": "/assets/terrible/place/for/product/images/1.jpg",
+      "description": "police station extended copy",
+      "price": "27,000dkk"
+    },
+    {
+      "id": "def",
+      "code": "714",
+      "name": "LEGO City Fire Station",
+      "image": "/assets/terrible/place/for/product/images/1.jpg",
+      "description": "fire station extended copy",
+      "price": "27,500dkk"
+    }
+  ]
+}

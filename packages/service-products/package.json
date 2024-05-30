@@ -1,0 +1,14 @@
+{
+  "name": "@baby-octan/service-products",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node server.js",
+    "lint": "eslint ./",
+    "test": "jest"
+  },
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.17.3"
+  }
+}

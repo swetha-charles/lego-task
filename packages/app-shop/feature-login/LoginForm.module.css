@@ -1,0 +1,39 @@
+.loginLabel {
+    font-weight: bold;
+    margin: 0;
+    padding: 6px 10px;
+}
+
+.formInput {
+    width: 100%;
+    margin: 0;
+    padding: 6px 8px;
+    display: block;
+    border-radius: 0.4rem;
+    border: 0.0625rem solid #b1b1b1;
+    height: clamp(2rem, 0.653061224489796vw + 1.846938775510204rem, 2.5rem);
+    color: #141414;
+}
+
+.formInput:hover {
+    border: 0.0625rem solid #006db7;
+}
+
+.formInput:focus {
+    border: 0.0625rem solid #006db7;
+}
+
+.loginButton {
+    background-color: #0067b2;
+    color: #ffffff;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    padding: 10px 15px;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+}

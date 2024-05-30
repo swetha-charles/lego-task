@@ -1,0 +1,17 @@
+{
+  "name": "@baby-octan/gateway",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node server.js",
+    "lint": "eslint ./",
+    "test": "jest"
+  },
+  "dependencies": {
+    "apollo-server": "2.25.4",
+    "apollo-server-express": "2.14.3",
+    "cors": "2.8.5",
+    "express": "^4.17.1"
+  }
+}
