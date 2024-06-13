@@ -16,6 +16,8 @@ module.exports = {
       watch: true,
       env: {
         NODE_ENV: 'development',
+        SERVICE_PRODUCTS_URL: 'http://localhost:4010'
+
       },
     },
     {

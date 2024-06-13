@@ -1,6 +1,6 @@
 const { convertToGqlProduct } = require('./utils/convertToGqlProduct');
 
-const SERVICE_PRODUCTS_URL = 'http://localhost:4010';
+const SERVICE_PRODUCTS_URL = process.env.SERVICE_PRODUCTS_URL;
 
 const products = async (parent) => {
   let response;
@@ -39,5 +39,5 @@ const product = async (parent, { code }) => {
 module.exports = {
   products,
   product,
-  SERVICE_PRODUCTS_URL,
+
 };
