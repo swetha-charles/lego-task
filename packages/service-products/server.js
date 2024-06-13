@@ -10,7 +10,7 @@ app.get('/products', (_, res) => {
   return res.send(mockProducts);
 });
 
-app.get('/product/:code', (req, res) => {
+app.get('/products/:code', (req, res) => {
   const code = req.params.code;
   const filteredProduct = mockProducts.results.filter((p) => p.code === code);
 

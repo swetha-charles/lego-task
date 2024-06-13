@@ -4,7 +4,7 @@ Service Products is a small expressjs application that currently serves up mocke
 
 ## Getting started
 
-Starting the server will bring up Gateway running at [localhost:4010](http://localhost:4010/) and there are two routes on the app at the moment; `/products` and `/product/:code`
+Starting the server will bring up Gateway running at [localhost:4010](http://localhost:4010/) and there are two routes on the app at the moment; `/products` and `/products/:code`
 
 ```bash
 # Install dependencies & link packages

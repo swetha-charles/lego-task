@@ -23,7 +23,7 @@ const product = async (parent, { code }) => {
   let response;
 
   try {
-    response = await fetch(SERVICE_PRODUCTS_URL + `/product/${code}`);
+    response = await fetch(SERVICE_PRODUCTS_URL + `/products/${code}`);
   } catch (err) {
     throw new Error('Could not retrieve product', err);
   }

@@ -73,7 +73,7 @@ describe('products resolver', () => {
     it('should request expected URL', async () => {
       await product(mockParent, { code: '713' });
 
-      expect(fetch).toHaveBeenCalledWith(`${SERVICE_PRODUCTS_URL}/product/713`);
+      expect(fetch).toHaveBeenCalledWith(`${SERVICE_PRODUCTS_URL}/products/713`);
     });
 
     it('should return null if no product found', async () => {
