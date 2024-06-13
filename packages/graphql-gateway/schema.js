@@ -5,6 +5,7 @@ const typeDefs = gql`
     type Query {
         hello(name: String): String
         products: [Product]!
+        product(code: String!): Product
     }
 
     type Product {
