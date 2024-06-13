@@ -53,4 +53,46 @@ describe('products resolver', () => {
       );
     });
   });
+
+  describe('get specific product', () => {
+    beforeEach(() => {
+      global.fetch = jest.fn(() =>
+        Promise.resolve({
+          json: () => Promise.resolve(mockProducts.results[0]),
+        })
+      );
+    });
+
+    it('should return correct product structure', async () => {
+      const expectedData = convertToGqlProduct(mockProducts.results[0]);
+
+      const data = await product(mockParent, { code: '713' });
+      expect(data).toEqual(expectedData);
+    });
+
+    it('should request expected URL', async () => {
+      await product(mockParent, { code: '713' });
+
+      expect(fetch).toHaveBeenCalledWith(`${SERVICE_PRODUCTS_URL}/product/713`);
+    });
+
+    it('should return null if no product found', async () => {
+      global.fetch = jest.fn(() =>
+        Promise.resolve({
+          json: () => Promise.resolve({}),
+        })
+      );
+
+      const data = await product(mockParent, { code: '000' });
+      expect(data).toBeNull();
+    });
+
+    it('should throw error when network request fails ', async () => {
+      global.fetch = jest.fn(() => Promise.reject());
+
+      expect(() => product(mockParent, { code: '713' })).rejects.toThrow(
+        'Could not retrieve product'
+      );
+    });
+  });
 });

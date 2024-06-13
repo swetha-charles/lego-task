@@ -1,6 +1,6 @@
-const { convertToGqlProduct } = require("./utils/convertToGqlProduct");
+const { convertToGqlProduct } = require('./utils/convertToGqlProduct');
 
- const SERVICE_PRODUCTS_URL = 'http://localhost:4010';
+const SERVICE_PRODUCTS_URL = 'http://localhost:4010';
 
 const products = async (parent) => {
   let response;
@@ -19,10 +19,25 @@ const products = async (parent) => {
   return products;
 };
 
+const product = async (parent, { code }) => {
+  let response;
+
+  try {
+    response = await fetch(SERVICE_PRODUCTS_URL + `/product/${code}`);
+  } catch (err) {
+    throw new Error('Could not retrieve product', err);
+  }
+
+  const data = await response.json();
+  if (data.code && data.name && data.price) {
+    return convertToGqlProduct(data);
+  } else {
+    return null;
+  }
+};
+
 module.exports = {
-    products,
-    SERVICE_PRODUCTS_URL
-  };
-  
-  
-  
+  products,
+  product,
+  SERVICE_PRODUCTS_URL,
+};
