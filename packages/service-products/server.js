@@ -13,7 +13,12 @@ app.get('/products', (_, res) => {
 app.get('/product/:code', (req, res) => {
   const code = req.params.code;
   const filteredProduct = mockProducts.results.filter((p) => p.code === code);
-  return res.send(filteredProduct[0]);
+
+    if(filteredProduct.length === 0){
+      return res.status(404).send({});
+    } else {
+      return res.send(filteredProduct[0]);
+    }
 });
 
 app.use(express.json());
