@@ -1,0 +1,1 @@
+process.env.SERVICE_PRODUCTS_URL = 'http://localhost:4010'

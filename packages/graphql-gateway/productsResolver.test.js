@@ -3,11 +3,11 @@ const emptyProducts = require('./__mocks__/service-products/empty-products.json'
 const {
   products,
   product,
-  SERVICE_PRODUCTS_URL,
 } = require('./productsResolver');
 const { convertToGqlProduct } = require('./utils/convertToGqlProduct');
 
 const mockParent = {};
+const SERVICE_PRODUCTS_URL = process.env.SERVICE_PRODUCTS_URL;
 
 describe('products resolver', () => {
   describe('get all products', () => {

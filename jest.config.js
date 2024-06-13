@@ -2,4 +2,5 @@
 module.exports = {
     testEnvironment: 'node',
     transformIgnorePatterns: [`/node_modules/?!unified`],
+    setupFiles: ['<rootDir>/.jest/setTestEnvVars.js'],
 };
