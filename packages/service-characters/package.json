@@ -1,0 +1,18 @@
+{
+  "name": "@baby-octan/service-characters",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node server.js",
+    "lint": "eslint ./",
+    "test": "jest"
+  },
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.17.3"
+  },
+  "devDependencies": {
+    "nock": "^14.0.0-beta.7",
+    "supertest": "^7.0.0"
+  }
+}
