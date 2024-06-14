@@ -12,6 +12,7 @@ const {
   getCharacterFilms,
 } = require('./swapiClient');
 
+const nock = require('nock');
 const mockSWAPIresponse = require('./__mocks__/mockUtils');
 const getCharactersPg1Mock = require('./__mocks__/get-characters-pg1.json');
 const getCharactersPg2Mock = require('./__mocks__/get-characters-pg2.json');
@@ -20,7 +21,6 @@ const getPlanets22Mock = require('./__mocks__/get-planets-22.json');
 const getFilms1Mock = require('./__mocks__/get-films-1.json');
 const getFilms2Mock = require('./__mocks__/get-films-2.json');
 
-const nock = require('nock');
 const SWAPI_URL = 'https://swapi.dev/api';
 
 describe('SWAPI client', () => {
