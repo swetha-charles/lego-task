@@ -7,6 +7,7 @@ jest.mock('node-cache', () => {
 
 const {
   getStarWarsCharacters,
+  getStarWarsCharacter,
   getCharacterHomeworld,
   getCharacterFilms,
 } = require('./swapiClient');
@@ -14,6 +15,7 @@ const {
 const mockSWAPIresponse = require('./__mocks__/mockUtils');
 const getCharactersPg1Mock = require('./__mocks__/get-characters-pg1.json');
 const getCharactersPg2Mock = require('./__mocks__/get-characters-pg2.json');
+const getCharacterId4 = require('./__mocks__/get-character-id4.json');
 const getPlanets22Mock = require('./__mocks__/get-planets-22.json');
 const getFilms1Mock = require('./__mocks__/get-films-1.json');
 const getFilms2Mock = require('./__mocks__/get-films-2.json');
@@ -56,6 +58,30 @@ describe('SWAPI client', () => {
 
       expect(() => getStarWarsCharacters()).rejects.toThrow(
         `Network Failure: could not retrieve SW characters`
+      );
+    });
+  });
+
+  describe('get character by id', () => {
+    it('should return pruned character data for id ', async () => {
+      mockSWAPIresponse();
+
+      const character = await getStarWarsCharacter('4');
+
+      const expectedCharacter = {
+        name: getCharacterId4.name,
+        homeworld: await getCharacterHomeworld(getCharacterId4),
+        films: await getCharacterFilms(getCharacterId4),
+      };
+
+      expect(character).toEqual(expectedCharacter);
+    });
+
+    it('should throw error if fetch call to SWAPI character url fails', async () => {
+      jest.spyOn(global, 'fetch').mockImplementationOnce(() => Promise.reject());
+
+      expect(() => getStarWarsCharacter('4')).rejects.toThrow(
+        `Network Failure: could not retrieve SW character`
       );
     });
   });

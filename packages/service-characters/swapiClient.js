@@ -33,6 +33,20 @@ const getStarWarsCharacters = async () => {
   );
 };
 
+const getStarWarsCharacter = async (id) => {
+  const url = `${SWAPI_CHARACTER_URL}/${id}`;
+  const character = await getData(
+    url,
+    `Network Failure: could not retrieve SW character from ${url}`
+  );
+
+  return {
+    name: character.name,
+    homeworld: await getCharacterHomeworld(character),
+    films: await getCharacterFilms(character),
+  };
+};
+
 const getCharacterHomeworld = async (character) => {
   const url = character.homeworld;
 
@@ -83,6 +97,7 @@ const getData = async (url, errorMessage) => {
 
 module.exports = {
   getStarWarsCharacters,
+  getStarWarsCharacter,
   getCharacterHomeworld,
   getCharacterFilms,
   SWAPI_CHARACTER_URL,
