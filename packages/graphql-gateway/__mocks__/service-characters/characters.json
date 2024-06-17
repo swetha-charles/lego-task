@@ -1,0 +1,15 @@
+{
+    "results": [
+      {
+        "name": "Darth Vader",
+        "homeworld": "Tatooine",
+        "films": [
+          "A New Hope",
+          "The Empire Strikes Back",
+          "Return of the Jedi",
+          "Revenge of the Sith"
+        ]
+      }
+    ]
+  }
+  
