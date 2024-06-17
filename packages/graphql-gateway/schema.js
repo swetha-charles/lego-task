@@ -5,6 +5,7 @@ const typeDefs = gql`
     type Query {
         hello(name: String): String
         characters: [Character]!
+        character(id: String!): Character
     }
 
     type Character {
