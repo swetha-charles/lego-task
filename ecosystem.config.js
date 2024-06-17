@@ -28,5 +28,15 @@ module.exports = {
         NODE_ENV: 'development',
       },
     },
+    {
+      name: 'service-characters',
+      cwd: 'packages/service-characters',
+      script: 'yarn dev',
+      autorestart: true,
+      watch: true,
+      env: {
+        NODE_ENV: 'development',
+      },
+    },
   ],
 };
