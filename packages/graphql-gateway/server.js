@@ -3,12 +3,14 @@ const cors = require('cors');
 const { ApolloServer } = require('apollo-server-express');
 const queryResolver = require('./queryResolvers');
 const loginResolver = require('./loginResolver');
-const { typeDefs } = require("./schema");
+const charactersResolver = require('./charactersResolver');
+const { typeDefs } = require('./schema');
 
 // Provide resolver functions for your schema fields
 const resolvers = {
   Query: {
     ...queryResolver,
+    ...charactersResolver,
   },
   Mutation: {
     ...loginResolver,
